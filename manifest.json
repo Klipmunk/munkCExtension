@@ -1,0 +1,36 @@
+{
+   "background": {
+      "page": "static/pages/background.html"
+   },
+   "browser_action": {
+      "default_icon": "static/images/logo16.png",
+      "default_popup": "static/pages/popup.html",
+      "default_title": "Click here to quickly Klip your text."
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "static/css/munk.css" ],
+      "js": ["static/js/functions.js" , "static/js/munk.js" ],
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "homepage_url": "https://www.klipmunk.com/",
+   "icons": {
+      "128": "static/images/logo128.png",
+      "16": "static/images/logo16.png",
+      "32": "static/images/logo32.png",
+      "32": "static/images/logo48.png"
+   },
+   "manifest_version": 2,
+   "name": "KlipMunk",
+   "omnibox": {
+      "keyword": "klipmunk"
+   },
+   "options_page": "static/pages/options.html",
+   "permissions": [ "http://*/*", "https://*/*", "ftp://*/*", "file://*/*", "contextMenus", "tabs", "tts", "alarms", "bookmarks" ,"storage"],
+   // "update_url": "https://clients2.google.com/service/update2/crx",
+   // "web_accessible_resources": [ "images/spinner.gif", "images/close.png", "pages/ga.html", "pages/options.html" ],
+   "version": "1.0"
+}
