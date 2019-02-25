@@ -1,0 +1,28 @@
+.munkuiButton{
+	background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/logo48.png');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.munkuiButtonWrapper{
+	position: absolute;
+	height: 30px;
+    width: 30px;
+    padding : 3px;
+    z-index: 1000;
+    background-color: #fffcfc;
+    border: 1px solid #9acebd6e;
+    border-radius: 15px;
+    display: none;
+}
+
+
+span.highligher {
+    background-color: rgba(57, 255, 25, 0.25);;
+    font-family: Futura;
+    font-weight: bold;
+}
