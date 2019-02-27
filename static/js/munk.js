@@ -12,7 +12,7 @@ function main_callback (e) {
 		data = [];
 		data.push({url : window.location.href, text: selection });
 		checkPages(data);
-		munkUi.style.display = 'none';
+		munk.munkUi.style.display = 'none';
 	}, 5);
 	
 }
@@ -144,7 +144,7 @@ var munk = {
 
 		document.addEventListener('mouseup', function (e) {
 			if (window.getSelection().toString() != "" && munk.isEditableElem == 0) {
-				var marginTop = munkUi.offsetHeight + 4;
+				var marginTop = munk.munkUi.offsetHeight + 4;
 				var rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
 				var startX = munk.startX;
 				if (Math.abs(munk.startX - e.pageX) <= 1 && Math.abs(munk.startY - e.pageY) <= 1) { // double click
@@ -176,10 +176,9 @@ var munk = {
 		munk.addUIComment();
 		munk.addUIMiniBtn();
 		munk.addUINotify();
-		document.querySelector('.munkuiButtonWrapper').addEventListener('click', function (e) {
+		document.querySelector('.munkuiButton').addEventListener("click", function(){
 			munk.highlightSelection();
 		});
-		
 	}
 }
 
