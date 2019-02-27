@@ -101,33 +101,38 @@ var munk = {
 		}
 	},
 	addUIButton : function(){
-		munkUi = document.createElement("div");
-		munkUi.classList.add('munkuiButtonWrapper');
-		munkUiBtn = document.createElement("div");
-		munkUiBtn.classList.add('munkuiButton');
-		munkUi.appendChild(munkUiBtn);
-		document.body.appendChild(munkUi);
+		this.munkUi = document.createElement("div");
+		this.munkUi.classList.add('munkuiButtonWrapper');
+		this.munkUiBtn = document.createElement("div");
+		this.munkUiBtn.classList.add('munkuiButton');
+		this.munkUi.appendChild(this.munkUiBtn);
+		document.body.appendChild(this.munkUi);
 	},
 	addUIComment : function(){
 		str = '<div class="munkCommentDiv"><textarea class="munkCommentTextarea" placeholder="Comment Here ..."></textarea><div class="munk-comment-block"><p class="munk-saving munk-label">Saving...</p><p class="munk-saved munk-label">Saved</p></div></div>';
-		munkUiComment = document.createElement("div");
-		munkUiComment.classList.add('munkCommentWrapper');
-		munkUiComment.innerHTML = str;
-		document.body.appendChild(munkUiComment);
+		this.munkUiComment = document.createElement("div");
+		this.munkUiComment.classList.add('munkCommentWrapper');
+		this.munkUiComment.innerHTML = str;
+		document.body.appendChild(this.munkUiComment);
 	},
 	addUIMiniBtn : function(){
 		str = '<div class="munk-counter-wrap-div"><div class="munk-counter-wrap"><span class="munk-counter">1</span><span class="munk-check"></span></div><span class="munk-expand"></span></div>';
-		munkUiMiniBtn = document.createElement("div");
-		munkUiMiniBtn.classList.add('munk-mini-btn-Wrapper');
-		munkUiMiniBtn.innerHTML = str;
-		document.body.appendChild(munkUiMiniBtn);
+		this.munkUiMiniBtn = document.createElement("div");
+		this.munkUiMiniBtn.classList.add('munk-mini-btn-Wrapper');
+		this.munkUiMiniBtn.innerHTML = str;
+		document.body.appendChild(this.munkUiMiniBtn);
 	},
 	addUINotify : function(){
 		str = '<div class="munk-notify-close"></div><div class="munk-notify-wrap"><div class="munk-notify-icon"></div><p class="munk-notify-text">Drag any sentence and click LINER icon to start highlighting.</p></div>';
-		munkUiNotify = document.createElement("div");
-		munkUiNotify.classList.add('munk-notify-tooltip');
-		munkUiNotify.innerHTML = str;
-		document.body.appendChild(munkUiNotify);
+		this.munkUiNotify = document.createElement("div");
+		this.munkUiNotify.classList.add('munk-notify-tooltip');
+		this.munkUiNotify.innerHTML = str;
+		document.body.appendChild(this.munkUiNotify);
+		this.showNotifyUi();
+	},
+	showNotifyUi : function(){
+		this.munkUiNotify.style.display = 'block';
+		setTimeout(function () {munk.munkUiNotify.style.display='none'}, 3000);
 	},
 	highlightSelection : function(e){
 		main_callback(e);
@@ -146,13 +151,13 @@ var munk = {
 					startX = rect.left;
 				}
 				munk.startY = rect.top;
-				munkUi.style.left = startX+'px';
-				munkUi.style.top = (munk.startY + window.scrollY - marginTop)+'px';
-				munkUi.style.display = 'block';
+				munk.munkUi.style.left = startX+'px';
+				munk.munkUi.style.top = (munk.startY + window.scrollY - marginTop)+'px';
+				munk.munkUi.style.display = 'block';
 				munk.munkSelection = window.getSelection().getRangeAt(0).toString();
 				e.d_type = 'mouseup';
 			}else{
-				munkUi.style.display = 'none';
+				munk.munkUi.style.display = 'none';
 			}
 		});
 
@@ -164,7 +169,7 @@ var munk = {
 			}
 			munk.startX = e.pageX;
 			munk.startY = e.pageY;
-			munkUi.style.display = 'none';
+			munk.munkUi.style.display = 'none';
 		});
 
 		munk.addUIButton();
