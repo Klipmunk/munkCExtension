@@ -1,5 +1,5 @@
 .munkuiButton{
-	background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/logo48.png');
+    background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/logo48.png');
     background-position: center center;
     background-size: cover;
     width: 100%;
@@ -9,20 +9,210 @@
 
 
 .munkuiButtonWrapper{
-	position: absolute;
-	height: 30px;
+    position: absolute;
+    height: 30px;
     width: 30px;
     padding : 3px;
     z-index: 1000;
     background-color: #fffcfc;
-    border: 1px solid #9acebd6e;
+    border: 1px solid #9699986e;
     border-radius: 15px;
     display: none;
 }
 
+.munkCommentTextarea{
+        display: inline-block !important;
+    border: none !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-top: 0 !important;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+    width: 182px !important;
+    height: 25px !important;
+    font-family: MontserratRegular !important;
+    font-size: 14px !important;
+    line-height: 1.57 !important;
+    text-align: left !important;
+    color: #222222 !important;
+    outline: none !important;
+    resize: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
 
+.munkCommentWrapper{
+    position: fixed !important;
+    z-index: 9999999 !important;
+    width: 200px !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+    background-color: #ffffff !important;
+    box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.12) !important;
+    border-top: 1px solid #dedbdb6e;
+}
+
+
+.munkCommentWrapper:before {
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    top: -20px;
+    left: 45%;
+    border: 10px solid transparent;
+    border-bottom-color: #e6e5e5;
+}
+.munkCommentDiv{
+        width: 100% !important;
+    padding-top: 10px !important;
+    border-bottom: solid 1px #ededed !important;
+}
+.munk-label{
+    float: right !important;
+    margin-right: 15px !important;
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
+    height: 13px !important;
+    text-align: right !important;
+    font-family: AppleSDGothicNeo, MontserratRegular !important;
+    font-size: 11px !important;
+    text-align: right !important;
+    text-decoration: none !important;
+}
+.munk-saving, .munk-saved{
+    display: none;
+}
 span.highligher {
     background-color: rgba(57, 255, 25, 0.25);;
     font-family: Futura;
     font-weight: bold;
+
+}
+
+.munk-mini-btn-Wrapper{
+    right: 35px;
+    position: fixed !important;
+    width: 42px !important;
+    top: 50px !important;
+    -webkit-transition: 0.65s !important;
+    -webkit-transition-timing-function: cubic-bezier(0.25,0.1,0.25,1) !important;
+    z-index: 99999999999999999 !important;
+}
+.munk-counter{
+    display: block;
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    line-height: 2em !important;
+    text-align: center !important;
+    font-family: MontserratRegular !important;
+    color: #53777A !important;
+    z-index: 2 !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+}
+.munk-counter-wrap-div{
+        width: 100% !important;
+}
+.munk-counter-wrap{
+        position: relative;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    margin-top: 6px;
+    font-size: 20px;
+    line-height: 3em;
+    background-color: #b4f6da;
+    border-radius: 50%;
+}
+.munk-expand{
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: -6px;
+    width: 14px !important;
+    height: 14px !important;
+    margin: 0 0;
+    z-index: 2 !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/icons/expand-icon@2x.png') !important;
+    background-size: 14px 14px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.munk-check{
+    display: none;
+    position: absolute;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 0;
+    z-index: 2 !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/icons/check-icon@2x.png') !important;
+    background-size: 22px 18px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.munk-notify-tooltip{
+
+    position: fixed !important;
+    width: 288px !important;
+    height: 40px !important;
+    bottom: 25px !important;
+    right: 12px !important;
+    padding-top: 26px !important;
+    padding-bottom: 26px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    border-radius: 5px;
+    background-color: #777c5f82;
+    z-index: 9999999 !important;
+        box-sizing: content-box !important;
+}
+.munk-notify-wrap{
+        width: 100%;
+    height: 100%;
+}
+.munk-notify-close{
+    cursor: pointer !important;
+    position: absolute !important;
+    width: 14px !important;
+    height: 14px !important;
+    top: 10px !important;
+    right: 10px !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/icons/highlight-tip-close@2x.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.munk-notify-icon{
+    float: left !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/static/images/logo48.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+        box-sizing: content-box !important;
+}
+
+.munk-notify-text{
+    float: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: 15px !important;
+    width: 230px !important;
+    font-family: MontserratRegular !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-stretch: normal !important;
+    line-height: 1.43 !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+    color: #ffffff !important;
 }

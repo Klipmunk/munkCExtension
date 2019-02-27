@@ -108,6 +108,27 @@ var munk = {
 		munkUi.appendChild(munkUiBtn);
 		document.body.appendChild(munkUi);
 	},
+	addUIComment : function(){
+		str = '<div class="munkCommentDiv"><textarea class="munkCommentTextarea" placeholder="Comment Here ..."></textarea><div class="munk-comment-block"><p class="munk-saving munk-label">Saving...</p><p class="munk-saved munk-label">Saved</p></div></div>';
+		munkUiComment = document.createElement("div");
+		munkUiComment.classList.add('munkCommentWrapper');
+		munkUiComment.innerHTML = str;
+		document.body.appendChild(munkUiComment);
+	},
+	addUIMiniBtn : function(){
+		str = '<div class="munk-counter-wrap-div"><div class="munk-counter-wrap"><span class="munk-counter">1</span><span class="munk-check"></span></div><span class="munk-expand"></span></div>';
+		munkUiMiniBtn = document.createElement("div");
+		munkUiMiniBtn.classList.add('munk-mini-btn-Wrapper');
+		munkUiMiniBtn.innerHTML = str;
+		document.body.appendChild(munkUiMiniBtn);
+	},
+	addUINotify : function(){
+		str = '<div class="munk-notify-close"></div><div class="munk-notify-wrap"><div class="munk-notify-icon"></div><p class="munk-notify-text">Drag any sentence and click LINER icon to start highlighting.</p></div>';
+		munkUiNotify = document.createElement("div");
+		munkUiNotify.classList.add('munk-notify-tooltip');
+		munkUiNotify.innerHTML = str;
+		document.body.appendChild(munkUiNotify);
+	},
 	highlightSelection : function(e){
 		main_callback(e);
 	},
@@ -147,8 +168,10 @@ var munk = {
 		});
 
 		munk.addUIButton();
-
-		document.querySelector('.munkuiButton').addEventListener('click', function (e) {
+		munk.addUIComment();
+		munk.addUIMiniBtn();
+		munk.addUINotify();
+		document.querySelector('.munkuiButtonWrapper').addEventListener('click', function (e) {
 			munk.highlightSelection();
 		});
 		
