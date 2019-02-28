@@ -138,10 +138,16 @@ var munk = {
 		main_callback(e);
 	},
 	init : function(){
-		document.addEventListener('dblclick', function (e) {
-			e.d_type = 'dblclick';
+
+		document.addEventListener('click', function (e) {
+			munk.highlightSelection();
 		});
 
+		document.addEventListener('dblclick', function (e) {
+			e.d_type = 'dblclick';
+		});		
+
+		
 		document.addEventListener('mouseup', function (e) {
 			if (window.getSelection().toString() != "" && munk.isEditableElem == 0) {
 				var marginTop = munk.munkUi.offsetHeight + 4;
@@ -161,6 +167,7 @@ var munk = {
 			}
 		});
 
+
 		document.addEventListener('mousedown', function (e) {
 			if (munk.isEditableContent(e) == true) {
 				isEditableElem = 1;
@@ -176,9 +183,6 @@ var munk = {
 		munk.addUIComment();
 		munk.addUIMiniBtn();
 		munk.addUINotify();
-		document.querySelector('.munkuiButton').addEventListener("click", function(){
-			munk.highlightSelection();
-		});
 	}
 }
 
