@@ -45,7 +45,7 @@
 
 .munkCommentWrapper{
     display: none;
-    position: fixed !important;
+    position: absolute !important;
     z-index: 9999999 !important;
     width: 200px !important;
     line-height: 1 !important;

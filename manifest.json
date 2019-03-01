@@ -8,9 +8,9 @@
       "default_title": "Click here to quickly Klip your text."
    },
    "content_scripts": [ {
-      "all_frames": true,
+      "all_frames": false,
       "css": [ "static/css/munk.css" ],
-      "js": ["static/js/findandreplaceObj.js", "static/js/functions.js" , "static/js/munk.js" ],
+      "js": ["static/js/findandreplaceObj.js", "static/js/functions.js", "static/js/munk.js"  ],
       "matches": [ "<all_urls>" ],
       "run_at": "document_end"
    } ],
@@ -29,7 +29,7 @@
       "keyword": "klipmunk"
    },
    "options_page": "static/pages/options.html",
-   "permissions": [ "identity", "http://*/*", "https://*/*", "ftp://*/*", "file://*/*", "contextMenus", "tabs", "tts", "alarms", "bookmarks" ,"storage"],
+   "permissions": [ "cookies", "identity", "http://*/*", "https://*/*", "ftp://*/*", "file://*/*", "contextMenus", "tabs", "tts", "alarms", "bookmarks" ,"storage"],
    // "update_url": "https://clients2.google.com/service/update2/crx",
    // "web_accessible_resources": [ "images/spinner.gif", "images/close.png", "pages/ga.html", "pages/options.html" ],
    "version": "1.1",

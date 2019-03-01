@@ -29,7 +29,14 @@ function getOption (req)
 
 function addToHistory (data, callback)
 {	
-	var obj = {text : data.word, url : data.url};
+	var obj = [];
+	obj[data.id] = {id : data.id, text : data.word, url : data.url};
+	saveInDB(obj, callback);
+}
+
+function addToComment (data, callback)
+{	
+	var obj = {comment : data.comment, klipId : data.klipId};
 	saveInDB(obj, callback);
 }
 

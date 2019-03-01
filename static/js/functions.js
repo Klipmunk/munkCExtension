@@ -8,9 +8,10 @@ function getOptions (callback, e) {
 
 
 
-function addToHistory (word, url) {
+function addToHistory (id, word, url) {
 	chrome.extension.sendMessage({
 		method: 'addToHistory',
+		id : id,
 		word: word,
 		url: url
 	}, function () {});
@@ -24,3 +25,17 @@ function getFromDB() {
 	},function () {});
 }
 
+
+function saveCommentInDB(txt, klipid, callback){
+	if(callback){
+		func = callback();
+	}else{
+		func = function () {};
+	}
+	chrome.extension.sendMessage({
+		method: 'addToComment',
+		comment: txt,
+		klipId: klipid
+	}, func);
+
+}
